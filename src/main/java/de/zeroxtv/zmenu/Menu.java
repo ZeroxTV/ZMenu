@@ -25,7 +25,7 @@ public class Menu {
         }
     }
 
-    public void setIcon(int slot, Clickable clickable) {
+    public void setItem(int slot, Clickable clickable) {
         if (slot >= 0 && slot < clickables.length) {
             clickables[slot] = clickable;
         }
