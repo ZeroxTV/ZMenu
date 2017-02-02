@@ -1,0 +1,7 @@
+name: ZMenu
+version: ${project.version}
+main: de.zeroxtv.zmenu.ZMenu
+prefix: ZMenu
+load: STARTUP
+authors: [ZeroxTV]
+description: A simple Item Menu API
