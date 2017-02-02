@@ -27,6 +27,24 @@ public class ToggleButton implements Clickable {
         else offClick.click(event);
     }
 
+    public ToggleButton(ItemStack on, ItemStack off, Clicked onClick, Clicked offClick, boolean state) {
+        this.on = on;
+        this.off = off;
+        this.state = state;
+        this.onClick = onClick;
+        this.offClick = offClick;
+
+        this.onClick = event -> {
+            toggle();
+            onClick.click(event);
+        };
+
+        this.offClick = event -> {
+            toggle();
+            offClick.click(event);
+        };
+    }
+
     public ToggleButton(Material on, int onAmount, Material off, int offAmount, Clicked onClick, Clicked offClick, boolean state) {
         this.on = new ItemStack(on, onAmount);
         this.off = new ItemStack(off, offAmount);
