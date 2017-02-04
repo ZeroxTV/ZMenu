@@ -12,6 +12,11 @@ public class ClickButton implements Clickable {
     ItemStack itemStack;
     Clicked clicked;
 
+    public ClickButton(ItemStack itemStack, Clicked clicked) {
+        this.itemStack = itemStack;
+        this.clicked = clicked;
+    }
+
     public ClickButton(Material material, int amount, short durability, Clicked clicked) {
         this.itemStack = new ItemStack(material, amount, durability);
         this.clicked = clicked;

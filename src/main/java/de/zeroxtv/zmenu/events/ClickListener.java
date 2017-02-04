@@ -2,6 +2,7 @@ package de.zeroxtv.zmenu.events;
 
 import de.zeroxtv.zmenu.Menu;
 import de.zeroxtv.zmenu.clickables.Clickable;
+import de.zeroxtv.zmenu.clickables.ToggleButton;
 import de.zeroxtv.zmenu.util.MenuHolder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,9 +25,10 @@ public class ClickListener implements Listener {
 
             if (clickable != null && event.getInventory().getItem(slot) != null) {
                 Player clicker = (Player) event.getWhoClicked();
-
-
                 clickable.click(event);
+                if (clickable instanceof ToggleButton) {
+                    menu.open(clicker);
+                }
             }
         }
     }
